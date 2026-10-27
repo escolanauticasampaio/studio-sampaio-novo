@@ -84,8 +84,7 @@ st.markdown("""
 # CONFIGURAÇÃO DO BANCO DE DADOS (SUPABASE)
 # ==============================================================================
 def conectar_bd():
-    # URL de conexão com o Pooler do Supabase (Porta 6543 - Essencial para nuvem)
-    db_url = "postgresql+psycopg2://postgres.didwkuzlfbdudqrlvkpu:cD9QEGjsV01MkqI6@aws-0-us-east-1.pooler.supabase.com:6543/postgres"
+    db_url = st.secrets["SUPABASE_URL"]
     engine = sqlalchemy.create_engine(db_url)
     return engine
 engine = conectar_bd()
