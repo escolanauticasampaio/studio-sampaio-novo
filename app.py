@@ -84,8 +84,8 @@ st.markdown("""
 # CONFIGURAÇÃO DO BANCO DE DADOS (SUPABASE)
 # ==============================================================================
 def conectar_bd():
-    # URL de conexão com o driver pg8000 compatível com o Streamlit Cloud
-    db_url = "postgresql+pg8000://postgres:cD9QEGjsV01MkqI6@db.didwkuzlfbdudqrlvkpu.supabase.co:5432/postgres"
+    # URL de conexão segura com pooler do Supabase (porta 6543)
+    db_url = "postgresql+psycopg2://postgres.didwkuzlfbdudqrlvkpu:cD9QEGjsV01MkqI6@aws-0-us-east-1.pooler.supabase.com:6543/postgres"
     engine = sqlalchemy.create_engine(db_url)
     return engine
 engine = conectar_bd()
