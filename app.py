@@ -85,13 +85,8 @@ st.markdown("""
 # CONFIGURAÇÃO DO BANCO DE DADOS (SUPABASE)
 # ==============================================================================
 def conectar_bd():
-    try:
-        db_url = st.secrets["SUPABASE_URL"]
-        db_url = db_url.replace("postgresql+psycopg2://", "postgresql+pg8000://")
-    except Exception:
-        # Fallback de conexão caso executado sem secrets locais
-        db_url = "postgresql+pg8000://postgres:cD9QEGjsV01MkqI6@db.didwkuzlfbdudqrlvkpu.supabase.co:5432/postgres"
-        
+    # URL segura de pooler do Supabase para conexões na nuvem
+    db_url = "postgresql+psycopg2://postgres.didwkuzlfbdudqrlvkpu:cD9QEGjsV01MkqI6@aws-0-us-east-1.pooler.supabase.com:6543/postgres"
     engine = sqlalchemy.create_engine(db_url)
     return engine
 
