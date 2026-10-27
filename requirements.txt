@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 streamlit
 pandas
 plotly
 sqlalchemy
-=======
-streamlit
-pandas
-plotly
-sqlalchemy
->>>>>>> decb552c721c6dd65932ba75bc835ae86e438702
 psycopg2-binary
+pg8000
