@@ -84,10 +84,11 @@ st.markdown("""
 # CONFIGURAÇÃO DO BANCO DE DADOS (SUPABASE)
 # ==============================================================================
 def conectar_bd():
-    # Ligação direta à Supabase com o driver psycopg2
+    # URL de conexão direta e estável com o Supabase
     db_url = "postgresql+psycopg2://postgres:cD9QEGjsV01MkqI6@db.didwkuzlfbdudqrlvkpu.supabase.co:5432/postgres"
     engine = sqlalchemy.create_engine(db_url)
     return engine
+
 engine = conectar_bd()
 
 def inicializar_tabelas():
