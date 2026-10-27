@@ -84,8 +84,9 @@ st.markdown("""
 # CONFIGURAÇÃO DO BANCO DE DADOS (SUPABASE)
 # ==============================================================================
 def conectar_bd():
-    db_url = st.secrets["SUPABASE_URL"]
-    engine = sqlalchemy.create_engine(db_url)
+    # Usa a porta direta 5432 com o psycopg2-binary e parâmetro de estabilidade
+    db_url = "postgresql+psycopg2://postgres:cD9QEGjsV01MkqI6@db.didwkuzlfbdudqrlvkpu.supabase.co:5432/postgres"
+    engine = sqlalchemy.create_engine(db_url, connect_args={'connect_timeout': 15})
     return engine
 engine = conectar_bd()
 
